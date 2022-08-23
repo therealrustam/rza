@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Изображение</title>
+    <style>
+        body {
+            background: rgb(34, 193, 195);
+            background: linear-gradient(90deg, rgba(34, 193, 195, 1) 2%, rgba(228, 162, 21, 1) 96%);
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            margin: 0 auto;
+            padding: 50px 100px;
+            max-width: 100%;
+        }
+
+        .image {
+            border-radius: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        {{ URL |safe }}
+    </div>
+</body>
+
+</html>

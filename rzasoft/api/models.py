@@ -6,8 +6,10 @@ class Tag(models.Model):
 
 
 class Picture(models.Model):
-    image = models.ImageField()
+    image = models.TextField()
     amount = models.IntegerField()
+    counter = models.IntegerField(blank=True,
+                                  null=True)
     category = models.ManyToManyField(Tag,
                                       through='CategoryPicture',
                                       related_name='pictures')
@@ -16,7 +18,9 @@ class Picture(models.Model):
 class CategoryPicture(models.Model):
     category = models.ForeignKey(Picture,
                                  on_delete=models.SET_NULL,
-                                 blank='true')
+                                 blank=True,
+                                 null=True)
     tag = models.ForeignKey(Tag,
                             on_delete=models.SET_NULL,
-                            blank='true')
+                            blank=True,
+                            null=True)
