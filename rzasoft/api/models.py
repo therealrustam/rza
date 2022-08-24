@@ -1,3 +1,7 @@
+"""
+Создание моделей категории и изображения.
+"""
+
 from django.db import models
 
 
@@ -8,8 +12,7 @@ class Tag(models.Model):
 class Picture(models.Model):
     image = models.TextField()
     amount = models.IntegerField()
-    counter = models.IntegerField(blank=True,
-                                  null=True)
+    counter = models.IntegerField(default=0)
     category = models.ManyToManyField(Tag,
                                       through='CategoryPicture',
                                       related_name='pictures')
